@@ -1,9 +1,13 @@
 {
-  "name": "testui",
+  "name": "@mydefi/ui_examples",
+  "description": "Examples and explanations about how to use mydefiUI.",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mydefi/ui": "0.0.20",
+    "bootstrap": "^4.3.1",
     "react": "^16.11.0",
+    "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0"
   },
