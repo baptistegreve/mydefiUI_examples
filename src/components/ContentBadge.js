@@ -1,18 +1,17 @@
 import React from "react";
 
 /** Import mydefiUI theme */
-import { Colors, Card, Text, Badge } from "@mydefi/ui";
+import { Colors, Card, Text, Badge, Button } from "@mydefi/ui";
 
-const ContentText = props => {
+const ContentBadge = props => {
   return (
     <div className="col-12 p-0">
       <Text size="28px" bold break>
-        Text
+        Badge
       </Text>
       <Text size="19px" color={Colors.textTertiary} break>
-        The {"<Text>"} component is used to display inline-text with some custom
-        styles. It can be used to display titles, paragraphs of text, or even
-        labels inside other components.
+        The {"<Badge>"} component is used to display small badges. It can be
+        useful to highlight some numbers/data.
       </Text>
       <div className="ptop-50">
         <Text bold size="19px" break>
@@ -20,10 +19,10 @@ const ContentText = props => {
         </Text>
         <Card className="mtop-10 mbottom-50">
           <pre>
-            {`import { Text } from "@mydefi/ui"; 
+            {`import { Badge } from "@mydefi/ui"; 
             
 const App = () => (
-    <Text>Your Text</Text>
+    <Badge>Default Badge</Badge>
 );`}
           </pre>
         </Card>
@@ -31,45 +30,91 @@ const App = () => (
           Demonstration
         </Text>
 
-        {/** White Title */}
+        {/** Default Button */}
         <Card className="mtop-10 mbottom-15">
           <div className="col-12 align-middle">
-            <pre className="mbottom-20">
-              {`<Text size="25px" bold break>White Bold Title</Text>
-<Text size="16px" color={Colors.textSecondary}>With a grey description.</Text>`}
-            </pre>
-            <Text size="25px" bold break>
-              White Bold Title
-            </Text>
-            <Text size="16px" color={Colors.textSecondary}>
-              With a grey description.
-            </Text>
+            <pre className="mbottom-20">{`<Badge>Default Badge</Badge>`}</pre>
+            <div class="col-12 center">
+              <Badge>Default Badge</Badge>
+            </div>
           </div>
         </Card>
 
-        {/** Blue, White, Red Text */}
+        {/** Rounded Colored Badge */}
         <Card className="mtop-10 mbottom-15">
-          <div className="col-12">
-            <pre className="mbottom-20">
-              {`<Text size="15px" color={Colors.blue} break>Blue</Text>
-<Text size="15px" color={Colors.red} break>Red</Text>`}
-            </pre>
-            <Text size="15px" color={Colors.blue} break>
-              Blue Text
-            </Text>{" "}
-            <Text size="15px" color={Colors.red}>
-              Red Text
-            </Text>
+          <div className="col-12 align-middle">
+            <pre className="mbottom-20">{`<Badge rounded backgroundColor="#1ad692" foregroundColor="#ffffff">
+    Rounded/Green Badge
+</Badge>`}</pre>
+            <div class="col-12 center">
+              <Badge
+                rounded
+                backgroundColor="#1ad692"
+                foregroundColor="#ffffff"
+              >
+                Rounded/Green Badge
+              </Badge>
+            </div>
           </div>
         </Card>
 
-        {/** Grey Smallcaps */}
-        <Card className="mtop-10 mbottom-15 mbottom-50">
+        {/** Bigger Badge with Label */}
+        <Card className="mtop-10 mbottom-15">
           <div className="col-12 align-middle">
-            <pre className="mbottom-20">{`<Text size="18px" smallcaps color="#d43d76>Pink Smallcaps</Text>`}</pre>
-            <Text size="18px" smallcaps color="#d43d76">
-              Pink Smallcaps
+            <pre className="mbottom-20">{`<Badge size="15px" label="SAFE" foregroundColor="#7ffacc" 
+    backgroundColor="#191735">Status</Badge>`}</pre>
+            <div class="col-12 center">
+              <Badge
+                size="15px"
+                foregroundColor="#7ffacc"
+                backgroundColor="#191735"
+                className="p-10"
+                label="SAFE"
+              >
+                Status
+              </Badge>
+            </div>
+          </div>
+        </Card>
+
+        {/** Bigger Badge with custom labels */}
+        <Card className="mtop-10 mbottom-50">
+          <div className="col-12 align-middle">
+            <pre className="mbottom-20">
+              {`<Badge foregroundColor="#7ffacc" backgroundColor="#191735" size="15px"
+    label={
+        <Text>
+            <Text size="14px" bold break>
+                10 ETH
             </Text>
+            <Text color={Colors.textSecondary} size="13px">
+                $1,700
+            </Text>
+        </Text>
+    }>
+    Collateral
+</Badge>`}
+            </pre>
+            <div class="col-12 center">
+              <Badge
+                size="15px"
+                foregroundColor="#7ffacc"
+                backgroundColor="#191735"
+                className="p-10"
+                label={
+                  <Text>
+                    <Text size="14px" bold break>
+                      10 ETH
+                    </Text>
+                    <Text color={Colors.textSecondary} size="13px">
+                      $1,700
+                    </Text>
+                  </Text>
+                }
+              >
+                Collateral
+              </Badge>
+            </div>
           </div>
         </Card>
 
@@ -77,16 +122,17 @@ const App = () => (
           Properties
         </Text>
         <Text size="16px" color={Colors.textSecondary} break>
-          Here are the properties that can be used with the Text component.
+          Here are the properties that can be used with the Button component.
         </Text>
 
         {/** <Text> properties */}
         <Card className="mtop-10 mbottom-15 component_properties">
           <Text bold size="16px" break>
-            color
+            backgroundColor
           </Text>
           <Text size="15px" color={Colors.textSecondary} break>
-            Use the color of your choice. Example: #FF9944.
+            Set the background color with the hex color of your choice. Example:
+            "#ff9944".
           </Text>
           <ul>
             <li>
@@ -103,11 +149,13 @@ const App = () => (
             </li>
           </ul>
           <hr />
+
           <Text bold size="16px" break>
-            size
+            foregroundColor
           </Text>
           <Text size="15px" color={Colors.textSecondary} break>
-            Use the size of your choice. Example: 14px.
+            Set the text color with the hex color of your choice. Example:
+            "#ffffff".
           </Text>
           <ul>
             <li>
@@ -119,79 +167,67 @@ const App = () => (
             <li>
               Default:{" "}
               <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                13px
+                #ffffff
               </Badge>
             </li>
           </ul>
           <hr />
+
           <Text bold size="16px" break>
-            smallcaps
+            size
           </Text>
           <Text size="15px" color={Colors.textSecondary} break>
-            Set the text to small capitals.
+            Set the size of badge's title: Example "15px".
           </Text>
           <ul>
             <li>
               <Text size="15px">Type:</Text>{" "}
               <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                boolean
+                string
               </Badge>
             </li>
             <li>
               Default:{" "}
               <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                false
+                15px
               </Badge>
             </li>
           </ul>
           <hr />
+
           <Text bold size="16px" break>
-            bold
+            label (optional)
           </Text>
           <Text size="15px" color={Colors.textSecondary} break>
-            Set the text to bold.
+            You can add a label to the badge if you want to display more
+            information. <br />
+            The label can be a simple string or custom Text component.
           </Text>
           <ul>
             <li>
               <Text size="15px">Type:</Text>{" "}
               <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                boolean
+                string
               </Badge>
             </li>
             <li>
               Default:{" "}
               <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                false
+                "Label Text"
+              </Badge>{" "}
+              or{" "}
+              <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
+                {'<Text color="#ff9944">Orange Label</Text>'}
               </Badge>
             </li>
           </ul>
           <hr />
-          <Text bold size="16px" break>
-            break
-          </Text>
-          <Text size="15px" color={Colors.textSecondary} break>
-            Add a line-break after the Text component
-          </Text>
-          <ul>
-            <li>
-              <Text size="15px">Type:</Text>{" "}
-              <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                boolean
-              </Badge>
-            </li>
-            <li>
-              Default:{" "}
-              <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                false
-              </Badge>
-            </li>
-          </ul>
-          <hr />
+
           <Text bold size="16px" break>
             onClick
           </Text>
           <Text size="15px" color={Colors.textSecondary} break>
-            An action can be called when clicking on this component if you add
+            An action can be called when clicking on a this component if you add
             the onClick properties. <br />
             Example: () => this.YourFunction()
           </Text>
@@ -215,4 +251,4 @@ const App = () => (
   );
 };
 
-export default ContentText;
+export default ContentBadge;

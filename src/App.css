@@ -31,6 +31,16 @@ li {
   margin-bottom: 5px;
 }
 
+.bubble {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  border: 1px solid #322f3a;
+  display: inline-block;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+
 /** Custom Properties */
 .TextHover:hover {
   cursor: pointer;
@@ -146,6 +156,9 @@ li {
 }
 .mright-10 {
   margin-right: 10px !important;
+}
+.mright-15 {
+  margin-right: 15px !important;
 }
 
 .mtop-10 {

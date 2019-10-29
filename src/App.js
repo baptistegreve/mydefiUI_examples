@@ -3,23 +3,28 @@ import "./App.css";
 
 /** Import mydefiUI theme */
 import {
-  theme,
+  Colors,
   Main,
-  Card,
   SidePanel,
   Button,
   Modal,
-  Field,
-  Table,
-  TableRow,
-  Badge,
-  Text,
-  CheckBox
+  TextField,
+  Text
 } from "@mydefi/ui";
 
 /** Import Docs Components */
+import ContentInstallation from "./components/ContentInstallation";
+import ContentColors from "./components/ContentColors";
 import ContentText from "./components/ContentText";
 import ContentButton from "./components/ContentButton";
+import ContentBadge from "./components/ContentBadge";
+import ContentMain from "./components/ContentMain";
+import ContentCard from "./components/ContentCard";
+import ContentTable from "./components/ContentTable";
+import ContentSidePanel from "./components/ContentSidePanel";
+import ContentModal from "./components/ContentModal";
+import ContentTextField from "./components/ContentTextField";
+import ContentCheckBox from "./components/ContentCheckBox";
 
 /** Import Bootstrap */
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -34,26 +39,8 @@ export default class App extends Component {
     input_name: "",
 
     /** Manage SideBar Clicks */
-    component_selected: "Text"
+    component_selected: "Installation"
   };
-
-  /** Open and Close Panel */
-  OpenPanel() {
-    console.log("Should open panel.");
-    this.setState({ panel_visible: true });
-  }
-  ClosePanel() {
-    console.log("Should close panel.");
-    this.setState({ panel_visible: false });
-  }
-
-  /** Open and Close Modal */
-  OpenModal() {
-    this.setState({ modal_visible: true });
-  }
-  CloseModal() {
-    this.setState({ modal_visible: false });
-  }
 
   /** Form Submit */
   SubmitForm() {
@@ -69,6 +56,36 @@ export default class App extends Component {
 
   DisplaySelectedComponent() {
     switch (this.state.component_selected) {
+      // Display Installation Instructions
+      case "Installation":
+        return <ContentInstallation></ContentInstallation>;
+        break;
+
+      // Display Colors
+      case "Colors":
+        return <ContentColors></ContentColors>;
+        break;
+
+      // Display Main
+      case "Main":
+        return <ContentMain></ContentMain>;
+        break;
+
+      // Card Component
+      case "Card":
+        return <ContentCard></ContentCard>;
+        break;
+
+      // SidePanel Component
+      case "SidePanel":
+        return <ContentSidePanel></ContentSidePanel>;
+        break;
+
+      // Modal Component
+      case "Modal":
+        return <ContentModal></ContentModal>;
+        break;
+
       // Display Buttons
       case "Button":
         return <ContentButton></ContentButton>;
@@ -76,109 +93,7 @@ export default class App extends Component {
 
       // Table
       case "Table":
-        return (
-          <div className="col-12 p-0">
-            <Card
-              title="This a simple table"
-              description="It can be useful to display a large amount of information."
-            >
-              <Table className="mtop-15">
-                <thead>
-                  <TableRow
-                    head={true}
-                    data={["Hash", "From", "To", "Value"]}
-                  ></TableRow>
-                </thead>
-                <tbody>
-                  <TableRow
-                    data={[
-                      <span className="white">0x14578...</span>,
-                      <Text color={theme.textSecondary}>0xa78wOP...</Text>,
-                      "0xa78wOP...",
-                      <Badge rounded>0.45 ETH</Badge>
-                    ]}
-                  ></TableRow>
-
-                  <TableRow
-                    data={[
-                      <span className="pink">0x14578...</span>,
-                      "0xa78wOP...",
-                      "0xa78wOP...",
-                      <Badge
-                        rounded
-                        backgroundColor="#d43d76"
-                        foregroundColor="#FFFFFF"
-                      >
-                        12.10 ETH
-                      </Badge>
-                    ]}
-                  ></TableRow>
-
-                  <TableRow
-                    data={[
-                      <span className="yellow">0x14578...</span>,
-                      "0xa78wOP...",
-                      "0xa78wOP...",
-                      <Badge
-                        rounded
-                        backgroundColor="#fd9240"
-                        foregroundColor="#FFFFFF"
-                      >
-                        892.90 ETH
-                      </Badge>
-                    ]}
-                  ></TableRow>
-                  <TableRow
-                    data={[
-                      <span className="green">0x14578...</span>,
-                      "0xa78wOP...",
-                      "0xa78wOP...",
-                      <Badge
-                        rounded
-                        backgroundColor="#1ad692"
-                        foregroundColor="#FFFFFF"
-                      >
-                        892.90 ETH
-                      </Badge>
-                    ]}
-                  ></TableRow>
-                </tbody>
-              </Table>
-            </Card>
-          </div>
-        );
-        break;
-
-      // Card Component
-      case "Card":
-        return (
-          <div className="row">
-            <div className="col-4">
-              <Card
-                title="Clickable card with icon"
-                description="Click me to open a side panel"
-                icon={require("./assets/img/compound-logo-square.png")}
-                onClick={() => this.OpenPanel()}
-              ></Card>
-            </div>
-
-            <div className="col-4">
-              <Card
-                title="No need to click"
-                description="I'm not clickable"
-              ></Card>
-            </div>
-
-            <div className="col-4">
-              <Card
-                title="Open a Modal"
-                description="Click on me to open a simple Modal"
-                icon={require("./assets/img/wallet-logo-square.png")}
-                onClick={() => this.OpenModal()}
-              ></Card>
-            </div>
-          </div>
-        );
+        return <ContentTable></ContentTable>;
         break;
 
       // Text Component
@@ -188,133 +103,17 @@ export default class App extends Component {
 
       // Badge Component
       case "Badge":
-        return (
-          <div className="col-12 p-0">
-            <Card
-              title="Here are some other components"
-              description="Have you noticed that the title and description are now centered?"
-              className="center"
-            >
-              <div className="col-12 mtop-40 left">
-                <h3 className="left mbottom-15">Badges</h3>
-
-                {/** Collateral Badge with label */}
-                <Badge
-                  size="15px"
-                  foregroundColor="#7ffacc"
-                  backgroundColor="#191735"
-                  label={
-                    <React.Fragment>
-                      <Text size="14px" bold break>
-                        10 ETH
-                      </Text>
-                      <Text color={theme.textSecondary} size="13px">
-                        $1,700
-                      </Text>
-                    </React.Fragment>
-                  }
-                  className="p-10"
-                >
-                  Collateral
-                </Badge>
-
-                {/** Debt Badge with label */}
-                <Badge
-                  size="15px"
-                  foregroundColor="#e85e5e"
-                  backgroundColor="#191735"
-                  label={
-                    <React.Fragment>
-                      <Text size="14px" bold break>
-                        103 DAI
-                      </Text>
-                      <Text color={theme.textSecondary} size="13px">
-                        $103
-                      </Text>
-                    </React.Fragment>
-                  }
-                  className="p-10 mtop-10"
-                >
-                  Debt
-                </Badge>
-
-                {/** Status Badge without secondary label */}
-                <Badge
-                  size="15px"
-                  foregroundColor="#ffffff"
-                  backgroundColor="#191735"
-                  label={
-                    <Text size="14px" color={theme.green} bold>
-                      SAFE
-                    </Text>
-                  }
-                  className="p-10 mtop-10"
-                >
-                  Status
-                </Badge>
-              </div>
-            </Card>
-          </div>
-        );
+        return <ContentBadge></ContentBadge>;
         break;
 
       // TextField
       case "TextField":
-        return (
-          <div className="col-12 p-0">
-            <Card
-              title="Inputs"
-              description="You can use those inputs in your forms."
-              className="center"
-            >
-              {/** Text Inputs */}
-              <div className="col-12 mtop-20 left">
-                <Text bold break size="14px">
-                  Text Inputs
-                </Text>
-                <Field
-                  label={
-                    <Text smallcaps size="15px" color={theme.textSecondary}>
-                      Text Input with label
-                    </Text>
-                  }
-                >
-                  <input type="text" placeholder="Standard Placeholder" />
-                </Field>
-                <Field className="mtop-10">
-                  <input type="text" placeholder="Text input without label" />
-                </Field>
-              </div>
+        return <ContentTextField></ContentTextField>;
+        break;
 
-              {/** Checkbox Inputs */}
-              <div className="col-12 mtop-20 left">
-                <Text bold break size="14px">
-                  Checkbox
-                </Text>
-                <CheckBox
-                  className="mtop-10"
-                  label="Checkbox with green checkmark (default)"
-                ></CheckBox>
-                <CheckBox
-                  label="White checkbox with pink checkmark"
-                  backgroundColor={theme.white}
-                  foregroundColor={theme.pink}
-                ></CheckBox>
-                <CheckBox
-                  label={
-                    <Text color={theme.white}>
-                      <Text color={theme.yellow}>Yellow</Text> checkbox with{" "}
-                      <Text color={theme.blue}>blue</Text> checkmark (and
-                      colored label)
-                    </Text>
-                  }
-                  backgroundColor={theme.yellow}
-                  foregroundColor={theme.blue}
-                ></CheckBox>
-              </div>
-            </Card>
-          </div>
-        );
+      // CheckBox
+      case "CheckBox":
+        return <ContentCheckBox></ContentCheckBox>;
         break;
     }
   }
@@ -325,19 +124,39 @@ export default class App extends Component {
         {/** Menu SideBar */}
         <div className="SideNav ptop-25">
           <div className="col-12 center">
-            <Text bold size="20px">
+            <Text
+              bold
+              size="20px"
+              className="cursor"
+              onClick={() => this.SelectComponent("Installation")}
+            >
               mydefiUI
             </Text>
           </div>
 
           <div className="col-12 ptop-25">
-            <Text smallcaps bold size="17px" color={theme.textSecondary} break>
+            <Text smallcaps bold size="17px" color={Colors.textSecondary} break>
+              Get Started
+            </Text>
+            <Text
+              bold
+              size="18px"
+              color={Colors.textPrimary}
+              break
+              className="TextHover"
+              onClick={() => this.SelectComponent("Installation")}
+            >
+              Installation
+            </Text>
+          </div>
+          <div className="col-12 ptop-25">
+            <Text smallcaps bold size="17px" color={Colors.textSecondary} break>
               Theme
             </Text>
             <Text
               bold
               size="18px"
-              color={theme.textPrimary}
+              color={Colors.textPrimary}
               break
               className="TextHover"
               onClick={() => this.SelectComponent("Colors")}
@@ -347,7 +166,7 @@ export default class App extends Component {
             <Text
               bold
               size="18px"
-              color={theme.textPrimary}
+              color={Colors.textPrimary}
               break
               className="TextHover"
               onClick={() => this.SelectComponent("Text")}
@@ -357,7 +176,7 @@ export default class App extends Component {
             <Text
               bold
               size="18px"
-              color={theme.textPrimary}
+              color={Colors.textPrimary}
               break
               className="TextHover"
               onClick={() => this.SelectComponent("Button")}
@@ -367,7 +186,7 @@ export default class App extends Component {
             <Text
               bold
               size="18px"
-              color={theme.textPrimary}
+              color={Colors.textPrimary}
               break
               className="TextHover"
               onClick={() => this.SelectComponent("Badge")}
@@ -376,13 +195,13 @@ export default class App extends Component {
             </Text>
           </div>
           <div className="col-12 ptop-25">
-            <Text smallcaps bold size="17px" color={theme.textSecondary} break>
+            <Text smallcaps bold size="17px" color={Colors.textSecondary} break>
               Containers
             </Text>
             <Text
               bold
               size="18px"
-              color={theme.textPrimary}
+              color={Colors.textPrimary}
               break
               className="TextHover"
               onClick={() => this.SelectComponent("Main")}
@@ -392,7 +211,7 @@ export default class App extends Component {
             <Text
               bold
               size="18px"
-              color={theme.textPrimary}
+              color={Colors.textPrimary}
               break
               className="TextHover"
               onClick={() => this.SelectComponent("Card")}
@@ -402,7 +221,7 @@ export default class App extends Component {
             <Text
               bold
               size="18px"
-              color={theme.textPrimary}
+              color={Colors.textPrimary}
               break
               className="TextHover"
               onClick={() => this.SelectComponent("Table")}
@@ -412,25 +231,46 @@ export default class App extends Component {
             <Text
               bold
               size="18px"
-              color={theme.textPrimary}
+              color={Colors.textPrimary}
               break
               className="TextHover"
               onClick={() => this.SelectComponent("SidePanel")}
             >
               SidePanel
             </Text>
-            <Text bold size="18px" color={theme.textPrimary} break>
+            <Text
+              bold
+              size="18px"
+              color={Colors.textPrimary}
+              break
+              className="TextHover"
+              onClick={() => this.SelectComponent("Modal")}
+            >
               Modal
             </Text>
           </div>
           <div className="col-12 ptop-25">
-            <Text smallcaps bold size="17px" color={theme.textSecondary} break>
+            <Text smallcaps bold size="17px" color={Colors.textSecondary} break>
               Inputs
             </Text>
-            <Text bold size="18px" color={theme.textPrimary} break>
+            <Text
+              bold
+              size="18px"
+              color={Colors.textPrimary}
+              break
+              className="TextHover"
+              onClick={() => this.SelectComponent("TextField")}
+            >
               TextField
             </Text>
-            <Text bold size="18px" color={theme.textPrimary} break>
+            <Text
+              bold
+              size="18px"
+              color={Colors.textPrimary}
+              break
+              className="TextHover"
+              onClick={() => this.SelectComponent("CheckBox")}
+            >
               CheckBox
             </Text>
           </div>
@@ -461,7 +301,7 @@ export default class App extends Component {
           onClose={() => this.CloseModal()}
         >
           <div className="col-10 offset-1 mtop-10">
-            <Field label="Name" smallcaps>
+            <TextField label="Name" smallcaps>
               <input
                 type="text"
                 placeholder="Your name"
@@ -470,11 +310,11 @@ export default class App extends Component {
                   this.setState({ input_name: evt.target.value })
                 }
               />
-            </Field>
+            </TextField>
           </div>
 
           <div className="col-10 offset-1 mtop-10">
-            <Field label="Email">
+            <TextField label="Email">
               <input
                 type="text"
                 placeholder="Your email address"
@@ -483,7 +323,7 @@ export default class App extends Component {
                   this.setState({ input_email: evt.target.value })
                 }
               />
-            </Field>
+            </TextField>
           </div>
 
           <div className="col-12 center mtop-10">

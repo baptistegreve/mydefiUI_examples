@@ -1,22 +1,7 @@
 import React from "react";
-import Prism from "prismjs";
+
 /** Import mydefiUI theme */
-import { theme, Card, Text, Badge, Button } from "@mydefi/ui";
-
-// The code snippet you want to highlight, as a string
-const code_usage = `import { Text } from "@mydefi/ui";
-
-const App = () => (
-    <Text>Your Text</Text>
-);`;
-
-// Returns a highlighted HTML string
-const html_usage = Prism.highlight(
-  code_usage,
-  Prism.languages.javascript,
-  "javascript"
-);
-console.log(html_usage);
+import { Colors, Card, Text, Badge, Button } from "@mydefi/ui";
 
 const ContentButton = props => {
   return (
@@ -24,8 +9,9 @@ const ContentButton = props => {
       <Text size="28px" bold break>
         Button
       </Text>
-      <Text size="19px" color={theme.textSecondary} break>
-        The {"<Button>"} component is used to display buttons.
+      <Text size="19px" color={Colors.textTertiary} break>
+        The {"<Button>"} component is used to display buttons. They can be
+        linked to the function of your choice.
       </Text>
       <div className="ptop-50">
         <Text bold size="19px" break>
@@ -56,37 +42,27 @@ const App = () => (
           </div>
         </Card>
 
-        {/** Blue, White, Red Text */}
-        <Card className="mtop-10 mbottom-15">
+        {/** Colored Buttons */}
+        <Card className="mtop-10 mbottom-50">
           <div className="col-12">
             <pre className="mbottom-20">
-              {`<Text size="15px" color={theme.blue} break>Blue</Text>
-<Text size="15px" color={theme.red} break>Red</Text>`}
+              {`<Button color="yellow">Yellow Button</Button>
+<Button color="pink">Pink Button</Button>`}
             </pre>
-            <Text size="15px" color={theme.blue} break>
-              Blue Text
-            </Text>{" "}
-            <Text size="15px" color={theme.red}>
-              Red Text
-            </Text>
-          </div>
-        </Card>
-
-        {/** Grey Smallcaps */}
-        <Card className="mtop-10 mbottom-15 mbottom-50">
-          <div className="col-12 align-middle">
-            <pre className="mbottom-20">{`<Text size="18px" smallcaps color="#d43d76>Pink Smallcaps</Text>`}</pre>
-            <Text size="18px" smallcaps color="#d43d76">
-              Pink Smallcaps
-            </Text>
+            <div class="col-12 center">
+              <Button color="yellow" className="mright-15">
+                Yellow Button
+              </Button>
+              <Button color="pink">Pink Button</Button>
+            </div>
           </div>
         </Card>
 
         <Text bold size="19px" break>
           Properties
         </Text>
-        <Text size="16px" color={theme.textSecondary} break>
-          Here are the properties that can be used with the Text component.
+        <Text size="16px" color={Colors.textSecondary} break>
+          Here are the properties that can be used with the Button component.
         </Text>
 
         {/** <Text> properties */}
@@ -94,8 +70,9 @@ const App = () => (
           <Text bold size="16px" break>
             color
           </Text>
-          <Text size="15px" color={theme.textSecondary} break>
-            Use the color of your choice. Example: #FF9944.
+          <Text size="15px" color={Colors.textSecondary} break>
+            Use the color of your choice. Example: Theme colors such as
+            "yellow", "pink"... or hex colors such as "#FF9944".
           </Text>
           <ul>
             <li>
@@ -108,78 +85,20 @@ const App = () => (
               Default:{" "}
               <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
                 #ffffff
+              </Badge>{" "}
+              or{" "}
+              <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
+                yellow
               </Badge>
             </li>
           </ul>
           <hr />
-          <Text bold size="16px" break>
-            size
-          </Text>
-          <Text size="15px" color={theme.textSecondary} break>
-            Use the size of your choice. Example: 14px.
-          </Text>
-          <ul>
-            <li>
-              <Text size="15px">Type:</Text>{" "}
-              <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                string
-              </Badge>
-            </li>
-            <li>
-              Default:{" "}
-              <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                13px
-              </Badge>
-            </li>
-          </ul>
-          <hr />
-          <Text bold size="16px" break>
-            smallcaps
-          </Text>
-          <Text size="15px" color={theme.textSecondary} break>
-            Set the text to small capitals.
-          </Text>
-          <ul>
-            <li>
-              <Text size="15px">Type:</Text>{" "}
-              <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                boolean
-              </Badge>
-            </li>
-            <li>
-              Default:{" "}
-              <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                false
-              </Badge>
-            </li>
-          </ul>
-          <hr />
-          <Text bold size="16px" break>
-            bold
-          </Text>
-          <Text size="15px" color={theme.textSecondary} break>
-            Set the text to bold.
-          </Text>
-          <ul>
-            <li>
-              <Text size="15px">Type:</Text>{" "}
-              <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                boolean
-              </Badge>
-            </li>
-            <li>
-              Default:{" "}
-              <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                false
-              </Badge>
-            </li>
-          </ul>
-          <hr />
+
           <Text bold size="16px" break>
             onClick
           </Text>
-          <Text size="15px" color={theme.textSecondary} break>
-            An action can be called when clicking on a Text component if you add
+          <Text size="15px" color={Colors.textSecondary} break>
+            An action can be called when clicking on a this component if you add
             the onClick properties. <br />
             Example: () => this.YourFunction()
           </Text>
