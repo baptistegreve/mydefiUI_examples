@@ -23,13 +23,11 @@ const ContentTable = props => {
             
 const App = () => (
     <Table>
-        <TableRow
-            data={["Hash", "From", "To", "Value"]}
-        ></TableRow>
-        <TableRow
-        data={["Hash", "From", "To", "Value"]}
-      ></TableRow>
-  </Table>
+        <TableRow head data={["Hash", "From", "To", "Value"]}></TableRow>
+        <TableRow 
+            data={["0x5a89...", "0x89ui...", "0x23ae...", "10 ETH"]}>
+        </TableRow>
+    </Table>
 );`}
           </pre>
         </Card>

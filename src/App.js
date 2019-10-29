@@ -12,6 +12,9 @@ import {
   Text
 } from "@mydefi/ui";
 
+/** Manage Routing */
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 /** Import Docs Components */
 import ContentInstallation from "./components/ContentInstallation";
 import ContentColors from "./components/ContentColors";
@@ -118,10 +121,9 @@ export default class App extends Component {
     }
   }
 
-  render() {
+  DisplaySideNavigation() {
     return (
-      <Main>
-        {/** Menu SideBar */}
+      <React.Fragment>
         <div className="SideNav ptop-25">
           <div className="col-12 center">
             <Text
@@ -138,198 +140,291 @@ export default class App extends Component {
             <Text smallcaps bold size="17px" color={Colors.textSecondary} break>
               Get Started
             </Text>
-            <Text
-              bold
-              size="18px"
-              color={Colors.textPrimary}
-              break
-              className="TextHover"
-              onClick={() => this.SelectComponent("Installation")}
-            >
-              Installation
-            </Text>
+            <Link to="/installation">
+              <Text
+                bold
+                size="18px"
+                color={Colors.textPrimary}
+                break
+                className="TextHover"
+              >
+                Installation
+              </Text>
+            </Link>
           </div>
           <div className="col-12 ptop-25">
             <Text smallcaps bold size="17px" color={Colors.textSecondary} break>
               Theme
             </Text>
-            <Text
-              bold
-              size="18px"
-              color={Colors.textPrimary}
-              break
-              className="TextHover"
-              onClick={() => this.SelectComponent("Colors")}
-            >
-              Colors
-            </Text>
-            <Text
-              bold
-              size="18px"
-              color={Colors.textPrimary}
-              break
-              className="TextHover"
-              onClick={() => this.SelectComponent("Text")}
-            >
-              Text
-            </Text>
-            <Text
-              bold
-              size="18px"
-              color={Colors.textPrimary}
-              break
-              className="TextHover"
-              onClick={() => this.SelectComponent("Button")}
-            >
-              Button
-            </Text>
-            <Text
-              bold
-              size="18px"
-              color={Colors.textPrimary}
-              break
-              className="TextHover"
-              onClick={() => this.SelectComponent("Badge")}
-            >
-              Badge
-            </Text>
+            <Link to="/colors">
+              <Text
+                bold
+                size="18px"
+                color={Colors.textPrimary}
+                break
+                className="TextHover"
+              >
+                Colors
+              </Text>
+            </Link>
+
+            <Link to="/text">
+              <Text
+                bold
+                size="18px"
+                color={Colors.textPrimary}
+                break
+                className="TextHover"
+              >
+                Text
+              </Text>
+            </Link>
+
+            <Link to="/button">
+              <Text
+                bold
+                size="18px"
+                color={Colors.textPrimary}
+                break
+                className="TextHover"
+              >
+                Button
+              </Text>
+            </Link>
+
+            <Link to="/badge">
+              <Text
+                bold
+                size="18px"
+                color={Colors.textPrimary}
+                break
+                className="TextHover"
+              >
+                Badge
+              </Text>
+            </Link>
           </div>
           <div className="col-12 ptop-25">
             <Text smallcaps bold size="17px" color={Colors.textSecondary} break>
               Containers
             </Text>
-            <Text
-              bold
-              size="18px"
-              color={Colors.textPrimary}
-              break
-              className="TextHover"
-              onClick={() => this.SelectComponent("Main")}
-            >
-              Main
-            </Text>
-            <Text
-              bold
-              size="18px"
-              color={Colors.textPrimary}
-              break
-              className="TextHover"
-              onClick={() => this.SelectComponent("Card")}
-            >
-              Card
-            </Text>
-            <Text
-              bold
-              size="18px"
-              color={Colors.textPrimary}
-              break
-              className="TextHover"
-              onClick={() => this.SelectComponent("Table")}
-            >
-              Table
-            </Text>
-            <Text
-              bold
-              size="18px"
-              color={Colors.textPrimary}
-              break
-              className="TextHover"
-              onClick={() => this.SelectComponent("SidePanel")}
-            >
-              SidePanel
-            </Text>
-            <Text
-              bold
-              size="18px"
-              color={Colors.textPrimary}
-              break
-              className="TextHover"
-              onClick={() => this.SelectComponent("Modal")}
-            >
-              Modal
-            </Text>
+
+            <Link to="/main">
+              <Text
+                bold
+                size="18px"
+                color={Colors.textPrimary}
+                break
+                className="TextHover"
+              >
+                Main
+              </Text>
+            </Link>
+
+            <Link to="/card">
+              <Text
+                bold
+                size="18px"
+                color={Colors.textPrimary}
+                break
+                className="TextHover"
+              >
+                Card
+              </Text>
+            </Link>
+
+            <Link to="/table">
+              <Text
+                bold
+                size="18px"
+                color={Colors.textPrimary}
+                break
+                className="TextHover"
+              >
+                Table
+              </Text>
+            </Link>
+
+            <Link to="/sidepanel">
+              <Text
+                bold
+                size="18px"
+                color={Colors.textPrimary}
+                break
+                className="TextHover"
+              >
+                SidePanel
+              </Text>
+            </Link>
+            <Link to="/modal">
+              <Text
+                bold
+                size="18px"
+                color={Colors.textPrimary}
+                break
+                className="TextHover"
+              >
+                Modal
+              </Text>
+            </Link>
           </div>
           <div className="col-12 ptop-25">
             <Text smallcaps bold size="17px" color={Colors.textSecondary} break>
               Inputs
             </Text>
-            <Text
-              bold
-              size="18px"
-              color={Colors.textPrimary}
-              break
-              className="TextHover"
-              onClick={() => this.SelectComponent("TextField")}
-            >
-              TextField
-            </Text>
-            <Text
-              bold
-              size="18px"
-              color={Colors.textPrimary}
-              break
-              className="TextHover"
-              onClick={() => this.SelectComponent("CheckBox")}
-            >
-              CheckBox
-            </Text>
+
+            <Link to="/textfield">
+              <Text
+                bold
+                size="18px"
+                color={Colors.textPrimary}
+                break
+                className="TextHover"
+              >
+                TextField
+              </Text>
+            </Link>
+
+            <Link to="/checkbox">
+              <Text
+                bold
+                size="18px"
+                color={Colors.textPrimary}
+                break
+                className="TextHover"
+              >
+                CheckBox
+              </Text>
+            </Link>
           </div>
         </div>
+      </React.Fragment>
+    );
+  }
 
+  render() {
+    return (
+      <Main>
         {/** Container Components */}
-        <section style={{ marginLeft: "260px", marginRight: "200px" }}>
-          <div className="container ptop-75">
-            {this.DisplaySelectedComponent()}
-          </div>
-        </section>
+        <Router>
+          {this.DisplaySideNavigation()}
+          <Switch>
+            {/** Home / Installation */}
+            <Route exact path="/">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentInstallation></ContentInstallation>
+                </div>
+              </section>
+            </Route>
+            <Route exact path="/installation">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentInstallation></ContentInstallation>
+                </div>
+              </section>
+            </Route>
 
-        {/** SidePanel */}
-        <SidePanel
-          title="SidePanel needs a title"
-          description="This is description of the SidePanel"
-          visible={this.state.panel_visible}
-          onClose={() => this.ClosePanel()}
-        >
-          {/** Add content here */}
-        </SidePanel>
+            {/** Colors */}
+            <Route exact path="/colors">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentColors></ContentColors>
+                </div>
+              </section>
+            </Route>
 
-        {/** Modal */}
-        <Modal
-          title="Modal Title"
-          description="And the amazing Modal description!"
-          visible={this.state.modal_visible}
-          onClose={() => this.CloseModal()}
-        >
-          <div className="col-10 offset-1 mtop-10">
-            <TextField label="Name" smallcaps>
-              <input
-                type="text"
-                placeholder="Your name"
-                value={this.state.input_name}
-                onChange={evt =>
-                  this.setState({ input_name: evt.target.value })
-                }
-              />
-            </TextField>
-          </div>
+            {/** Text */}
+            <Route exact path="/text">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentText></ContentText>
+                </div>
+              </section>
+            </Route>
 
-          <div className="col-10 offset-1 mtop-10">
-            <TextField label="Email">
-              <input
-                type="text"
-                placeholder="Your email address"
-                value={this.state.input_email}
-                onChange={evt =>
-                  this.setState({ input_email: evt.target.value })
-                }
-              />
-            </TextField>
-          </div>
+            {/** Button */}
+            <Route exact path="/button">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentButton></ContentButton>
+                </div>
+              </section>
+            </Route>
 
-          <div className="col-12 center mtop-10">
-            <Button onClick={() => this.SubmitForm()}>Save</Button>
-          </div>
-        </Modal>
+            {/** Badge */}
+            <Route exact path="/badge">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentBadge></ContentBadge>
+                </div>
+              </section>
+            </Route>
+
+            {/** Main */}
+            <Route exact path="/main">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentMain></ContentMain>
+                </div>
+              </section>
+            </Route>
+
+            {/** Card */}
+            <Route exact path="/card">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentCard></ContentCard>
+                </div>
+              </section>
+            </Route>
+
+            {/** Table */}
+            <Route exact path="/table">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentTable></ContentTable>
+                </div>
+              </section>
+            </Route>
+
+            {/** SidePanel */}
+            <Route exact path="/sidepanel">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentSidePanel></ContentSidePanel>
+                </div>
+              </section>
+            </Route>
+
+            {/** Modal */}
+            <Route exact path="/modal">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentModal></ContentModal>
+                </div>
+              </section>
+            </Route>
+
+            {/** TextField */}
+            <Route exact path="/textfield">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentTextField></ContentTextField>
+                </div>
+              </section>
+            </Route>
+
+            {/** CheckBox */}
+            <Route exact path="/checkbox">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentCheckBox></ContentCheckBox>
+                </div>
+              </section>
+            </Route>
+          </Switch>
+        </Router>
       </Main>
     );
   }
