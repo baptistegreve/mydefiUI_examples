@@ -22,7 +22,11 @@ const ContentButton = props => {
             {`import { Asset } from "@mydefi/ui"; 
             
 const App = () => (
-    <Asset icon="https://mydefi.org/img/tokens/dai.png" size="30px" symbol="DAI"></Asset>
+    <Asset 
+        icon="https://mydefi.org/img/tokens/dai.png" 
+        size="30px" 
+        symbol="DAI">
+    </Asset>
 );`}
           </pre>
         </Card>
