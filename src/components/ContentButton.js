@@ -85,10 +85,6 @@ const App = () => (
               Default:{" "}
               <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
                 #ffffff
-              </Badge>{" "}
-              or{" "}
-              <Badge backgroundColor="#11112b" foregroundColor="#FFFFFF">
-                yellow
               </Badge>
             </li>
           </ul>

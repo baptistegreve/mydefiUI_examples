@@ -28,6 +28,7 @@ import ContentSidePanel from "./components/ContentSidePanel";
 import ContentModal from "./components/ContentModal";
 import ContentTextField from "./components/ContentTextField";
 import ContentCheckBox from "./components/ContentCheckBox";
+import ContentAsset from "./components/ContentAsset";
 
 /** Import Bootstrap */
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -206,7 +207,7 @@ export default class App extends Component {
           </div>
           <div className="col-12 ptop-25">
             <Text smallcaps bold size="17px" color={Colors.textSecondary} break>
-              Containers
+              Components
             </Text>
 
             <Link to="/main">
@@ -230,6 +231,18 @@ export default class App extends Component {
                 className="TextHover"
               >
                 Card
+              </Text>
+            </Link>
+
+            <Link to="/asset">
+              <Text
+                bold
+                size="18px"
+                color={Colors.textPrimary}
+                break
+                className="TextHover"
+              >
+                Asset
               </Text>
             </Link>
 
@@ -375,6 +388,15 @@ export default class App extends Component {
               <section style={{ marginLeft: "260px", marginRight: "200px" }}>
                 <div className="container ptop-75">
                   <ContentCard></ContentCard>
+                </div>
+              </section>
+            </Route>
+
+            {/** Asset */}
+            <Route exact path="/asset">
+              <section style={{ marginLeft: "260px", marginRight: "200px" }}>
+                <div className="container ptop-75">
+                  <ContentAsset></ContentAsset>
                 </div>
               </section>
             </Route>
