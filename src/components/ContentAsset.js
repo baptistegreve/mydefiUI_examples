@@ -147,6 +147,7 @@ const App = () => (
               </Badge>
             </li>
           </ul>
+          <hr />
 
           <Text bold size="16px" break>
             size
