@@ -15,7 +15,6 @@ export default class ContentSidePanel extends Component {
     this.setState({ SidePanel01Visible: false });
   }
   render() {
-    const props = this.props;
     return (
       <React.Fragment>
         {/** SidePanel 01 */}

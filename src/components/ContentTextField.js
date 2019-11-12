@@ -45,7 +45,7 @@ const App = () => (
     <input type="text" placeholder="Default Input" />
 </TextField>`}
             </pre>
-            <div className="col-6 offset-3">
+            <div className="col-lg-6 offset-lg-3">
               <TextField>
                 <input type="text" placeholder="Default Input" />
               </TextField>
@@ -66,7 +66,7 @@ const App = () => (
     <input type="text" placeholder="Email address" />
 </TextField>`}
             </pre>
-            <div className="col-6 offset-3">
+            <div className="col-lg-6 offset-lg-3">
               <TextField label="Email Address">
                 <input type="text" placeholder="Email address" />
               </TextField>
@@ -88,7 +88,7 @@ const App = () => (
     <input type="text" placeholder="Your name" />
 </TextField>`}
             </pre>
-            <div className="col-6 offset-3">
+            <div className="col-lg-6 offset-lg-3">
               <TextField
                 label={
                   <Text smallcaps color={Colors.pink} size="16px">
@@ -118,7 +118,7 @@ const App = () => (
     <textarea placeholder="What's your idea?" rows="5"></textarea>
 </TextField>`}
             </pre>
-            <div className="col-6 offset-3">
+            <div className="col-lg-6 offset-lg-3">
               <TextField label="Email Address">
                 <input type="text" placeholder="Email address" />
               </TextField>

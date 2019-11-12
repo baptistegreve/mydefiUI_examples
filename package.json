@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@mydefi/ui": "^0.1.8",
+    "@mydefi/ui": "^0.1.10",
     "bootstrap": "^4.3.1",
     "prismjs": "^1.17.1",
     "react": "^16.11.0",

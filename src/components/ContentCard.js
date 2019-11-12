@@ -45,7 +45,7 @@ const App = () => (
             </pre>
           </div>
         </Card>
-        <div className="col-6 offset-3 mtop-10 p-0">
+        <div className="col-lg-6 offset-lg-3 mtop-10 p-0">
           <Card
             title="Default Card"
             description="With Title and Description."
@@ -70,7 +70,7 @@ const App = () => (
             </pre>
           </div>
         </Card>
-        <div className="col-6 offset-3 mtop-10 p-0">
+        <div className="col-lg-6 offset-lg-3 mtop-10 p-0">
           <Card
             title="Clickable card with icon"
             description="Click me to show the alert."

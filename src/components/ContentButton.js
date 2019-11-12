@@ -36,7 +36,7 @@ const App = () => (
             <pre className="mbottom-20">
               {`<Button onClick={() => alert("I'm working")}>Click me!</Button>`}
             </pre>
-            <div class="col-12 center">
+            <div className="col-12 center">
               <Button onClick={() => alert("I'm working")}>Click me!</Button>
             </div>
           </div>
@@ -49,7 +49,7 @@ const App = () => (
               {`<Button color="yellow">Yellow Button</Button>
 <Button color="pink">Pink Button</Button>`}
             </pre>
-            <div class="col-12 center">
+            <div className="col-12 center">
               <Button color="yellow" className="mright-15">
                 Yellow Button
               </Button>

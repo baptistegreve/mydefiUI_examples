@@ -1,9 +1,9 @@
 import React from "react";
 
 /** Import mydefiUI theme */
-import { Colors, Card, Text, Badge, Button, Table, TableRow } from "@mydefi/ui";
+import { Colors, Card, Text, Badge, Table, TableRow } from "@mydefi/ui";
 
-const ContentTable = props => {
+const ContentTable = () => {
   return (
     <div className="col-12 p-0">
       <Text size="28px" bold break>
@@ -54,7 +54,7 @@ const App = () => (
     ></TableRow>
 </Table>`}
             </pre>
-            <div class="col-12 center">
+            <div className="col-12 center">
               <Table className="mtop-15">
                 <TableRow
                   head

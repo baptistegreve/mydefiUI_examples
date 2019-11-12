@@ -15,7 +15,6 @@ export default class ContentModal extends Component {
     this.setState({ Modal01Visible: false });
   }
   render() {
-    const props = this.props;
     return (
       <React.Fragment>
         {/** Modal 01 */}

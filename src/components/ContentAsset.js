@@ -1,9 +1,9 @@
 import React from "react";
 
 /** Import mydefiUI theme */
-import { Colors, Card, Text, Badge, Button, Asset } from "@mydefi/ui";
+import { Colors, Card, Text, Badge, Asset } from "@mydefi/ui";
 
-const ContentButton = props => {
+const ContentButton = () => {
   return (
     <div className="col-12 p-0">
       <Text size="28px" bold break>
@@ -49,7 +49,7 @@ const App = () => (
     symbol="DAI">
 </Asset>`}
             </pre>
-            <div class="col-12 center">
+            <div className="col-12 center">
               <Asset
                 icon="https://mydefi.org/img/tokens/dai.png"
                 size="30px"
@@ -77,7 +77,7 @@ const App = () => (
     </Text>}>
 </Asset>`}
             </pre>
-            <div class="col-12 center">
+            <div className="col-12 center">
               <Asset
                 icon="https://mydefi.org/img/tokens/eth.png"
                 size="40px"

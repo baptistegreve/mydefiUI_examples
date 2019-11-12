@@ -1,15 +1,20 @@
 import React from "react";
 
 /** Import mydefiUI theme */
-import { Colors, Card, Text, Badge, Button } from "@mydefi/ui";
+import { Colors, Card, Text, Button } from "@mydefi/ui";
 
-const ContentInstallation = props => {
+const ContentInstallation = () => {
   return (
     <div className="col-12 p-0">
       <Text size="28px" bold break>
         Installation
       </Text>
       <Text size="19px" color={Colors.textTertiary} break>
+        mydefiUI is a React Library used to build the user interface of the
+        MyDeFi app (and this example website). We decided to open-source it to
+        let anyone benefit from it and potentially build applications that could
+        be integrated later in MyDeFi. <br />
+        <br />
         Here is how to install the mydefiUI package.
       </Text>
       <div className="ptop-50">
@@ -29,6 +34,8 @@ const ContentInstallation = props => {
             </Text>
             <div className="center mtop-15">
               <a
+                without
+                rel="noopener noreferrer"
                 href="https://github.com/baptistegreve/mydefiUI"
                 target="_blank"
               >

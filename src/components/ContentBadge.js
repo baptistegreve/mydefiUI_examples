@@ -1,9 +1,9 @@
 import React from "react";
 
 /** Import mydefiUI theme */
-import { Colors, Card, Text, Badge, Button } from "@mydefi/ui";
+import { Colors, Card, Text, Badge } from "@mydefi/ui";
 
-const ContentBadge = props => {
+const ContentBadge = () => {
   return (
     <div className="col-12 p-0">
       <Text size="28px" bold break>
@@ -34,7 +34,7 @@ const App = () => (
         <Card className="mtop-10 mbottom-15">
           <div className="col-12 align-middle">
             <pre className="mbottom-20">{`<Badge>Default Badge</Badge>`}</pre>
-            <div class="col-12 center">
+            <div className="col-12 center">
               <Badge>Default Badge</Badge>
             </div>
           </div>
@@ -46,7 +46,7 @@ const App = () => (
             <pre className="mbottom-20">{`<Badge rounded backgroundColor="#1ad692" foregroundColor="#ffffff">
     Rounded/Green Badge
 </Badge>`}</pre>
-            <div class="col-12 center">
+            <div className="col-12 center">
               <Badge
                 rounded
                 backgroundColor="#1ad692"
@@ -63,7 +63,7 @@ const App = () => (
           <div className="col-12 align-middle">
             <pre className="mbottom-20">{`<Badge size="15px" label="SAFE" foregroundColor="#7ffacc" 
     backgroundColor="#191735">Status</Badge>`}</pre>
-            <div class="col-12 center">
+            <div className="col-12 center">
               <Badge
                 size="15px"
                 foregroundColor="#7ffacc"
@@ -95,7 +95,7 @@ const App = () => (
     Collateral
 </Badge>`}
             </pre>
-            <div class="col-12 center">
+            <div className="col-12 center">
               <Badge
                 size="15px"
                 foregroundColor="#7ffacc"

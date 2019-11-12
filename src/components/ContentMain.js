@@ -1,9 +1,9 @@
 import React from "react";
 
 /** Import mydefiUI theme */
-import { Colors, Card, Text, Badge } from "@mydefi/ui";
+import { Colors, Card, Text } from "@mydefi/ui";
 
-const ContentText = props => {
+const ContentText = () => {
   return (
     <div className="col-12 p-0">
       <Text size="28px" bold break>
