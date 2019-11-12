@@ -10,10 +10,18 @@ const ContentInstallation = () => {
         Installation
       </Text>
       <Text size="19px" color={Colors.textTertiary} break>
-        mydefiUI is a React Library used to build the user interface of the
-        MyDeFi app (and this example website). We decided to open-source it to
-        let anyone benefit from it and potentially build applications that could
-        be integrated later in MyDeFi. <br />
+        mydefiUI is a React Library used to build the user interface of the{" "}
+        <a
+          href="https://mydefi.org"
+          rel="noopener noreferrer"
+          className="white"
+          target="_blank"
+        >
+          MyDeFi
+        </a>{" "}
+        web app (and this example website). We decided to open-source it to let
+        anyone benefit from it and potentially build applications that could be
+        integrated later in MyDeFi. <br />
         <br />
         Here is how to install the mydefiUI package.
       </Text>
