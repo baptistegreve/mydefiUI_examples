@@ -52,12 +52,12 @@ const App = () => (
           <div className="col-12">
             <pre className="mbottom-20">
               {`<Text size="15px" color={Colors.blue} break>Blue</Text>
-<Text size="15px" color={Colors.red} break>Red</Text>`}
+<Text size="15px" color={Colors.negative} break>Red</Text>`}
             </pre>
             <Text size="15px" color={Colors.blue} break>
               Blue Text
             </Text>{" "}
-            <Text size="15px" color={Colors.red}>
+            <Text size="15px" color={Colors.negative}>
               Red Text
             </Text>
           </div>
