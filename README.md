@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+
+This project contains the examples and documentation to use the mydefiUI React Library used to build the user interface of the MyDeFi app. The live website is available here: ui.mydefi.org.
 
 ## Available Scripts
 
